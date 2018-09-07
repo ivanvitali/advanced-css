@@ -28,7 +28,7 @@ body {
         to right bottom, 
         rgba(127, 213, 112, 0.8), 
         rgba(40, 180, 133, 0.8)), 
-        url(../img/hero.jpg);
+        url(../img/tecnologia.png);
     background-size: cover;
     background-position: top;
     position: relative;
@@ -36,7 +36,8 @@ body {
     clip-path: polygon(
         0 0,
         100% 0,
-        100% 75vh,
+        100% 100%,
+        48% 85vh,
         0 100%);
 }
 
@@ -60,6 +61,9 @@ body {
 
 .heading-primary {
     color: #fff;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -67,11 +71,49 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 .heading-primary-sub {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 15.5px;
+    letter-spacing: 22px;
+
+    animation: moveInRight 2s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
